@@ -1,0 +1,27 @@
+{
+  "name": "asclepio_backend",
+  "version": "1.0.0",
+  "description": "Asclepio backend of the flutter app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avto9711/asclepio_backend.git"
+  },
+  "keywords": [
+    "node",
+    "firebase"
+  ],
+  "author": "Angel Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Avto9711/asclepio_backend/issues"
+  },
+  "homepage": "https://github.com/Avto9711/asclepio_backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
