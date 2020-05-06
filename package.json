@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
+    "watch-node": "nodemon dist/server.js",
+    "serve": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +25,8 @@
   "homepage": "https://github.com/Avto9711/asclepio_backend#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
