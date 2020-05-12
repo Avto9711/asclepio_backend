@@ -4,7 +4,7 @@
   "description": "Asclepio backend of the flutter app",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node dist/index.js",
     "build": "tsc",
     "watch-node": "nodemon dist/server.js",
     "serve": "node dist/server.js",
