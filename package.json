@@ -26,8 +26,12 @@
   },
   "homepage": "https://github.com/Avto9711/asclepio_backend#readme",
   "dependencies": {
+    "@types/node": "^13.13.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mssql": "^6.2.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.24"
   },
   "devDependencies": {
     "@types/express": "^4.17.6",
