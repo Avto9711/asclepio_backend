@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 @Entity()
-export class TestResponsible{
+export default class TestResponsible{
     @PrimaryGeneratedColumn()
     testResponsibleId!:number;
     @Column()

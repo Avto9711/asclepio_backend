@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { TestResult } from "./enums/TestResult";
 
 @Entity()
 export class DiseaseTest {

@@ -1,4 +1,4 @@
-enum TestResult {
+export enum TestResult {
     Sick,
     NotSick
   }

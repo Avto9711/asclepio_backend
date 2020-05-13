@@ -9,6 +9,7 @@ export class User{
     @Column("enum",{enum:UserRole})
     userRole!:UserRole
     
+    
 }
 
 
