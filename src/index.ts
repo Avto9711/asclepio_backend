@@ -3,15 +3,17 @@ import db from "./config/db"
 const app = express();
 
 import dotenv from "dotenv";
-import  TestResponsible  from "./models/TestResponsible";
-
+import wrapperRouter from "./routes"
 dotenv.config();
 const port = process.env.PORT!
 
 
 db.connect().then(async (connection) => {
-    console.log("Database Up")
+    console.info("Database Up")
 })
+//setting routes
+wrapperRouter(app);
+
 app.listen(port, () => {
-    console.log("Runnings on %s and ", port)
+    console.info("Runnings on %s and ", port)
 })
