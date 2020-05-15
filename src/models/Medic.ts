@@ -19,11 +19,11 @@ export class Medic {
     
     @OneToOne(type => Direction)
     @JoinColumn()
-    directionId!: number;
+    direction!: Direction;
 
     @OneToOne(type => User)
     @JoinColumn()
-    userId!: number
+    user!: User
 
     @OneToOne(type => MedicsPersonsSick, medicPersonSicks=> medicPersonSicks.assignedMedic)
     assignedPersonSicks!:  MedicsPersonsSick
