@@ -20,11 +20,11 @@ export class Person {
 
     @OneToOne(type => Direction)
     @JoinColumn()
-    directionId!: number; //Fk
+    direction!: Direction; //Fk
 
     @OneToOne(type => User)
     @JoinColumn()
-    userId!: number;
+    user!: User;
 
     @OneToMany(type=> DiseaseTest, diseasteTest => diseasteTest.person)
     diseasteTests!:DiseaseTest[]
