@@ -1,4 +1,4 @@
 ## Asclepio BackendApp
-- Node Js
+- Express
 - Typescript
 - MySql
