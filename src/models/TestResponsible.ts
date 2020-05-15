@@ -1,4 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, JoinColumn } from "typeorm"
+import { DiseaseTest } from "./DiseaseTest";
+import { Direction } from "./Direction";
 
 @Entity()
 export default class TestResponsible{
@@ -10,6 +12,11 @@ export default class TestResponsible{
     name!:string;
     @Column()
     description!:string;
-    @Column()
-    directionId!:number; //directionid
+
+    @OneToOne(type => Direction)
+    @JoinColumn()
+    direction!:Direction; //directionid
+
+    @OneToMany(type=> DiseaseTest, diseaseTest=> diseaseTest.testResponsible)
+    diseaseTests!:DiseaseTest[]
 }

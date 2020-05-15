@@ -1,14 +1,24 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToOne, JoinColumn } from "typeorm"
+import { User } from "./User";
+import { PersonsSick } from "./PersonsSick";
+import { Medic } from "./Medic";
 @Entity()
 export class MedicsPersonsSick {
     @PrimaryGeneratedColumn()
     medicsPersonsSickId!: number;
     @Column()
-    PersonsSickId!: number // personsickid
-    @Column()
 
-    AssignedById!: number //userid
-    @Column()
 
+    @OneToOne(type=> PersonsSick)
+    @JoinColumn()
+    PersonsSick!: PersonsSick // personsickid
+
+    @ManyToOne(type => User)
+    AssignedBy!: User //userid
+
+    @ManyToOne(type=> Medic, medic=> medic.assignedPersonSicks)
+    assignedMedic!:Medic;
+
+    @Column()
     AssignedDate!: Date
 }

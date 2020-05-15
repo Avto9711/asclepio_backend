@@ -1,5 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
 import { TestResult } from "./enums/TestResult";
+import { Person } from "./Persons";
+import TestResponsible from "./TestResponsible";
 
 @Entity()
 export class DiseaseTest {
@@ -7,9 +9,11 @@ export class DiseaseTest {
     diseaseTestId!: number;
     @Column()
     testDateTime!: Date;
-    @Column()
 
-    testResponsibleId!: number;
+    @ManyToOne(type => TestResponsible, testRespo=> testRespo.diseaseTests)
+    testResponsible!: TestResponsible;
+
+
     @Column("enum",{enum:TestResult})
 
     testResult!: TestResult;
@@ -21,6 +25,8 @@ export class DiseaseTest {
     testComments!: string;
     @Column()
 
-    personId!: number //personid
+
+    @ManyToOne(type => Person, person=> person.diseasteTests)
+    person!: Person; //personid
 }
 

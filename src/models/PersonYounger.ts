@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
+import { Person } from "./Persons";
 
 @Entity()
 export class PersonYounger{
@@ -12,7 +13,7 @@ export class PersonYounger{
     @Column()
 
     age!:number;
-    @Column()
 
-    personId!:number
+    @ManyToOne(type=> Person, person=> person.youngers)
+    person!:Person
 }

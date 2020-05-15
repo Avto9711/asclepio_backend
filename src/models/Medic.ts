@@ -1,4 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, JoinColumn, OneToOne, ManyToMany, ManyToOne } from "typeorm"
+import { User } from "./User";
+import { Direction } from "./Direction";
+import { PersonsSick } from "./PersonsSick";
+import { MedicsPersonsSick } from "./MedicsPersonsSick";
 @Entity()
 export class Medic {
     
@@ -12,10 +16,16 @@ export class Medic {
     @Column()
 
     phoneNumber!: string;
-    @Column()
-
+    
+    @OneToOne(type => Direction)
+    @JoinColumn()
     directionId!: number;
 
-    @Column()
+    @OneToOne(type => User)
+    @JoinColumn()
     userId!: number
+
+    @OneToOne(type => MedicsPersonsSick, medicPersonSicks=> medicPersonSicks.assignedMedic)
+    assignedPersonSicks!:  MedicsPersonsSick
+
 }
