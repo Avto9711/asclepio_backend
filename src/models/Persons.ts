@@ -16,7 +16,6 @@ export class Person {
     @Column()
 
     phoneNumber!: string
-    @Column()
 
     @OneToOne(type => Direction)
     @JoinColumn()

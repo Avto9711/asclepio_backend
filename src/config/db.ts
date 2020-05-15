@@ -17,6 +17,7 @@ db.connect = (async () => {
         synchronize:true,
         entities:["./dist/models/*.js"],
         logging :true,
+        
     });
 
 })

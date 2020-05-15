@@ -1,6 +1,5 @@
 
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, ManyToOne, OneToMany } from "typeorm"
-import { Person } from "./Persons";
+import { Entity, PrimaryGeneratedColumn, OneToOne, JoinColumn, OneToMany } from "typeorm"
 import { DiseaseTest } from "./DiseaseTest";
 import { ChatMessage } from "./ChatMessage";
 @Entity()

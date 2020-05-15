@@ -6,8 +6,6 @@ import { Medic } from "./Medic";
 export class MedicsPersonsSick {
     @PrimaryGeneratedColumn()
     medicsPersonsSickId!: number;
-    @Column()
-
 
     @OneToOne(type=> PersonsSick)
     @JoinColumn()
@@ -17,7 +15,7 @@ export class MedicsPersonsSick {
     AssignedBy!: User //userid
 
     @ManyToOne(type=> Medic, medic=> medic.assignedPersonSicks)
-    assignedMedic!:Medic;
+    assignedMedic!:Medic; //medidId
 
     @Column()
     AssignedDate!: Date

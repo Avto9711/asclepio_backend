@@ -5,26 +5,24 @@ import TestResponsible from "./TestResponsible";
 
 @Entity()
 export class DiseaseTest {
+    
     @PrimaryGeneratedColumn()
     diseaseTestId!: number;
+
     @Column()
     testDateTime!: Date;
 
     @ManyToOne(type => TestResponsible, testRespo=> testRespo.diseaseTests)
     testResponsible!: TestResponsible;
 
-
     @Column("enum",{enum:TestResult})
-
     testResult!: TestResult;
-    @Column()
 
+    @Column()
     resultDateTime!: Date;
-    @Column()
 
+    @Column()
     testComments!: string;
-    @Column()
-
 
     @ManyToOne(type => Person, person=> person.diseasteTests)
     person!: Person; //personid
