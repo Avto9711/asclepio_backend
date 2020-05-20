@@ -8,9 +8,9 @@ export class Direction {
     @Column()
 
     province!: string;
-    @Column()
+    @Column("double")
     lat!: number;
-    @Column()
+    @Column("double")
     lon!: number
 
 }
