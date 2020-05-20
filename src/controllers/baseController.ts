@@ -1,6 +1,6 @@
 import { getCustomRepository, AbstractRepository, ObjectType } from "typeorm";
 import { Request, Response } from "express";
-import { IBaseRepository } from "../repositories/BaseRepository";
+import { IBaseRepository } from "../repositories/baseRepository";
 
 export default class BaseController<T extends AbstractRepository<T2>, T2> {
     private repo:IBaseRepository<T2>;
@@ -14,7 +14,11 @@ export default class BaseController<T extends AbstractRepository<T2>, T2> {
     }
     getAll = async (req: Request, resp: Response) => {
         this.getRepo();
-        var data = await this.repo.getAll()
+        var data = await this.repo.getAll();
         resp.json(data);
+    }
+
+    getById =  async(req:Request, resp:Response) =>{
+
     }
 }

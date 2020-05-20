@@ -1,6 +1,6 @@
 
 
-import direction from "../controllers/direction";
+import direction from "../controllers/directionController";
 import {Express} from "express";
 
 let wrapperRouter: Function;
