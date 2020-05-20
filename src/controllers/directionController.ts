@@ -10,14 +10,7 @@ class DirectionControllers extends BaseController<DirectionRepository, Direction
     }
 }
 
-const router = express.Router();
-const controller=  new DirectionControllers();
-
-router.get("/", controller.getAll);
-router.post("/", controller.create);
-router.get("/:entityId", controller.getById);
-router.delete("/:entityId", controller.delete);
-router.put("/:entityId", controller.update);
+const controller =  new DirectionControllers();
 
 
-export default router
+export default controller.router
