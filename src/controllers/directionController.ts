@@ -1,4 +1,3 @@
-import express from "express";
 import { Direction } from "../models/Direction";
 import BaseController from "./baseController";
 import { DirectionRepository } from "../repositories/directionRepository";

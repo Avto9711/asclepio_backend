@@ -10,6 +10,10 @@ export class User {
     
     @Column("enum",{enum:UserRole})
     userRole!:UserRole
+
+    //external Id
+    @Column()
+    userExternalId!:string
     
     @OneToMany(type=> MedicsPersonsSick, medicsPSick =>  medicsPSick.AssignedBy)
     assignedMedicsPersonsSicks!:MedicsPersonsSick[]
