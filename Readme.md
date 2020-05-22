@@ -4,3 +4,5 @@
 - Typescript
 - MySql
 - TypeORM
+- firebase
+- morgan
